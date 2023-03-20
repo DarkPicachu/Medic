@@ -326,8 +326,7 @@ namespace Med.Forms
             indexpage(out index, out dgw);
 
 
-            string pole = dgw.Columns[1].Name;
-            MessageBox.Show(pole);
+            
 
             /*switch (index)
             {

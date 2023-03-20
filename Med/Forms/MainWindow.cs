@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Reflection.Metadata.Ecma335;
 using Microsoft.VisualBasic.Logging;
 using System.Reflection;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Med.Forms
 {
@@ -28,7 +29,7 @@ namespace Med.Forms
         {
             InitializeComponent();
             CreateCollumns();
-            RefresDataGrid(dataGridView1, 1);
+            RefresDataGrid(dataGridView1, 1,"");
             searchtags(1);
 
             dgw = dataGridView1;
@@ -40,7 +41,7 @@ namespace Med.Forms
             tab7.Parent = null;
             tab8.Parent = null;
             tab6.Parent = null;
-
+            
         }
 
         public void accNames(string log, string pas)
@@ -69,20 +70,20 @@ namespace Med.Forms
                 switch (i)
                 {
                     case 1:
-                        dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("client", "client");
-                        dgw.Columns.Add("worker", "worker");
-                        dgw.Columns.Add("time", "time");
-                        dgw.Columns.Add("diagnoz", "diagnoz");
-                        dgw.Columns.Add("healing", "healing");
-                        dgw.Columns.Add("rest", "rest");
+                        dgw.Columns.Add("id", "123");
+                        dgw.Columns.Add("client", "Клиент");
+                        dgw.Columns.Add("worker", "Врач");
+                        dgw.Columns.Add("time", "Время");
+                        dgw.Columns.Add("diagnoz", "Диагноз");
+                        dgw.Columns.Add("healing", "Лечение");
+                        dgw.Columns.Add("rest", "Отдых");
                         break;
                     case 2:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("Name", "Name");
-                        dgw.Columns.Add("Surname", "Surname");
+                        dgw.Columns.Add("name", "Name");
+                        dgw.Columns.Add("surname", "Surname");
                         dgw.Columns.Add("phone", "phone");
-                        dgw.Columns.Add("Age", "Age");
+                        dgw.Columns.Add("age", "Age");
                         break;
                     case 3:
                         dgw.Columns.Add("id", "id");
@@ -210,35 +211,35 @@ namespace Med.Forms
             }
         }
 
-        private void RefresDataGrid(DataGridView dgw, int table_index)
+        private void RefresDataGrid(DataGridView dgw, int table_index, string search)
         {
 
             dgw.Rows.Clear();
             switch (table_index)
             {
                 case 1:
-                    queryString = $"select j.id , (c.Name+ ' ' + c.Surname),  (w.name+' '+w.surname), j.time, d.diagnoz , j.healing, j.rest\r\nfrom client c, workers w, jornal j , Diagnoz d\r\nwhere c.id = j.client and w.id = j.worker and d.id = j.diagnoz";
+                    queryString = $"select j.id , (c.name+ ' ' + c.surname),  (w.name+' '+w.surname), j.time, d.diagnoz , j.healing, j.rest from client c, workers w, jornal j , diagnoz d where c.id = j.client and w.id = j.worker and d.id = j.diagnoz {search}";
                     break;
                 case 2:
-                    queryString = $"select c.id , c.Name, c.Surname ,c.phone ,c.Age ,  (ac.login +';' +ac.password)\r\nfrom client c,  accounts ac\r\nwhere   ac.id = c.id";
+                    queryString = $"select c.id , c.name, c.surname ,c.phone ,c.age ,  (ac.login +';' +ac.password)\r\nfrom client c,  accounts ac\r\nwhere   ac.id = c.id {search}";
                     break;
                 case 3:
-                    queryString = $"select d.id, d.diagnoz\r\nfrom Diagnoz d";
+                    queryString = $"select d.id, d.diagnoz\r\nfrom Diagnoz d {search}";
                     break;
                 case 4:
-                    queryString = $"select wr.id, wr.name, wr.surname, r.name, cab.id,  ac.login+ ';'+ac.password\r\nfrom workers wr, cabinets cab, Rang r,accounts ac\r\nwhere  ac.id =wr.id and r.id = cab.rang and cab.id = wr.cabinet";
+                    queryString = $"select wr.id, wr.name, wr.surname, r.name, cab.id,  ac.login+ ';'+ac.password\r\nfrom workers wr, cabinets cab, rang r,accounts ac\r\nwhere  ac.id =wr.id and r.id = cab.rang and cab.id = wr.cabinet {search}";
                     break;
                 case 5:
-                    queryString = $"select ac.id, ac.login, ac.password, rl.rols\r\nfrom accounts ac, rols rl\r\nwhere rl.id = ac.id";
+                    queryString = $"select ac.id, ac.login, ac.password, rl.rols\r\nfrom accounts ac, rols rl\r\nwhere rl.id = ac.id {search}";
                     break;
                 case 6:
-                    queryString = $"select r.id, r.name\r\nfrom Rang r";
+                    queryString = $"select r.id, r.name\r\nfrom rang r {search}";
                     break;
                 case 7:
-                    queryString = $"select rl.id , rl.rols\r\nfrom rols rl";
+                    queryString = $"select rl.id , rl.rols\r\nfrom rols rl {search}";
                     break;
                 case 8:
-                    queryString = $"select cb.id , r.name\r\nfrom cabinets cb, Rang r\r\nwhere r.id = cb.rang";
+                    queryString = $"select cb.id , r.name\r\nfrom cabinets cb, rang r\r\nwhere r.id = cb.rang {search}";
                     break;
             }
 
@@ -258,16 +259,18 @@ namespace Med.Forms
 
         private void butSearch_Click(object sender, EventArgs e)
         {
+            int index;
+            indexpage(out index, out dgw);
+            string where = "and concat (j.id, c.name,c.surname,  w.name , w.surname, j.time, d.diagnoz , j.healing, j.rest) like '%"+searchValues+"'";
 
+
+
+
+
+
+            RefresDataGrid(dgw, index, where);
         }
 
-        private void search()
-        {
-
-            SqlCommand command = new SqlCommand(
-                queryString, dataBase.getConnection());
-            command.ExecuteNonQuery();
-        }
 
         private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -277,9 +280,15 @@ namespace Med.Forms
         private void searchtags(int index)
         {
             searchPole.Items.Clear();
-            searchPole.Text = "";
+            searchPole.Text = "";            
+            indexpage(out index, out dgw);
             List<string> tags = new List<string> { };
-            switch (index)
+            for (int i = 0;i<dgw.Columns.Count;i++)
+            {
+               tags.Add( dgw.Columns[i].Name);
+            }
+
+            /*switch (index)
             {
                 case 1:
                     tags = new List<string> { "id", "Клиент", "Лечащий врач", "Дата прихода", "Диагноз", "Лечение", "Отдых" };
@@ -305,7 +314,7 @@ namespace Med.Forms
                 case 8:
                     tags = new List<string> { "id", "Должность" };
                     break;
-            }
+            }*/
             string[] tagsstring = tags.ToArray();
             searchPole.Items.AddRange(tagsstring);
 
@@ -313,11 +322,13 @@ namespace Med.Forms
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int index;
+            indexpage(out index, out dgw);
 
-            int index = tabControl1.SelectedIndex + 1;
 
-            dgw = (tabControl1.Controls["tab" + index] as TabPage).Controls["dataGridView" + index] as DataGridView;
-           
+            string pole = dgw.Columns[1].Name;
+            MessageBox.Show(pole);
+
             /*switch (index)
             {
                 case 1:
@@ -346,7 +357,7 @@ namespace Med.Forms
                     break;
             }*/
 
-            RefresDataGrid(dgw, index);
+            RefresDataGrid(dgw, index,"");
             searchtags(index);
         }
 
@@ -366,7 +377,7 @@ namespace Med.Forms
             if (result == DialogResult.Yes)
             {
                 deleteRow(index, id);
-                RefresDataGrid(dgw, index);
+                RefresDataGrid(dgw, index,"");
             }
 
             this.TopMost = true;
@@ -406,6 +417,13 @@ namespace Med.Forms
             SqlCommand command = new SqlCommand(
                 queryString, dataBase.getConnection());
             command.ExecuteNonQuery();
+        }
+
+        private void indexpage(out int index, out DataGridView dgw)
+        {
+            index = tabControl1.SelectedIndex + 1;
+
+            dgw = (tabControl1.Controls["tab" + index] as TabPage).Controls["dataGridView" + index] as DataGridView;
         }
     }
 }

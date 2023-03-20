@@ -15,7 +15,7 @@ namespace Med
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             
-            Application.Run(new JornalForm(3));
+            Application.Run(new MainWindow(1));
         }
     }
 }

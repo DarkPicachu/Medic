@@ -26,7 +26,7 @@ namespace Med.Forms
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
 
-            string querystring = $"select rol, idaccounts from accounts where login = '{login}' and password='{password}'";
+            string querystring = $"select rol, id from accounts where login = '{login}' and password='{password}'";
 
             SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
 

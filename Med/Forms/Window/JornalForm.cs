@@ -12,7 +12,7 @@ namespace Med
         public JornalForm(int worker)
         {
             InitializeComponent();
-            comboBox1.MaxDropDownItems = 8;
+
             work = worker;
         }        
 
@@ -37,17 +37,17 @@ namespace Med
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime dateTime = DateTime.Today;
+            DateTime dateTime =DateTime.Now;
             string name = comboBox2.Text;
             string diagnoz = comboBox1.Text;
             string heal = textBox4.Text;
             string rest = textBox5.Text;
-            string querystring = $"insert into jornal (client, worker, time, diagnoz , healing,rest)values((select  id from client where (Name +' ' +Surname) = '"+name+"'), "+work+", (select  iddiaonoz from Diagnoz where (diagnoz) = '"+diagnoz+"'),'"+heal +"','"+rest +"')";
+            string querystring = $"insert into jornal (client, worker, time, diagnoz , healing,rest)values((select  id from client where (Name +' ' +Surname) = '{name}'), {work},'{dateTime}', (select  id from Diagnoz where (diagnoz) = '{diagnoz}'),'{heal}','{rest}')";
             SqlCommand cmd = new SqlCommand(querystring,dataBase.getConnection());
             dataBase.openConnection();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter();
-            dataAdapter.SelectCommand= cmd;
+            cmd.ExecuteNonQuery();
             dataBase.closeConnection();
+
 
 
         }

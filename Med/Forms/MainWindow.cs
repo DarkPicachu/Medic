@@ -1,22 +1,22 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection.Metadata.Ecma335;
-using Microsoft.VisualBasic.Logging;
-using System.Reflection;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Med.Forms
 {
 
-    
+
     public partial class MainWindow : Form
     {
        
@@ -29,7 +29,7 @@ namespace Med.Forms
         {
             InitializeComponent();
             CreateCollumns();
-            RefresDataGrid(dataGridView1, 1,"");
+            RefresDataGrid(dataGridView1, 1,"","", "", "", "", "", "");
             searchtags(1);
 
             dgw = dataGridView1;
@@ -70,7 +70,7 @@ namespace Med.Forms
                 switch (i)
                 {
                     case 1:
-                        dgw.Columns.Add("id", "123");
+                        dgw.Columns.Add("id", "id");
                         dgw.Columns.Add("client", "Клиент");
                         dgw.Columns.Add("worker", "Врач");
                         dgw.Columns.Add("time", "Время");
@@ -211,35 +211,55 @@ namespace Med.Forms
             }
         }
 
-        private void RefresDataGrid(DataGridView dgw, int table_index, string search)
+        private void RefresDataGrid(DataGridView dgw, int table_index, string first , string second, string third , string fourth, string fifth, string sixth, string seventh)
         {
-
+            
             dgw.Rows.Clear();
             switch (table_index)
             {
                 case 1:
-                    queryString = $"select j.id , (c.name+ ' ' + c.surname),  (w.name+' '+w.surname), j.time, d.diagnoz , j.healing, j.rest from client c, workers w, jornal j , diagnoz d where c.id = j.client and w.id = j.worker and d.id = j.diagnoz {search}";
+                    queryString = $"select j.id , (c.name+ ' ' + c.surname),  (w.name+' '+w.surname), j.time, d.diagnoz , j.healing, j.rest " +
+                        $"from client c, workers w, jornal j , diagnoz d " +
+                        $"where c.id = j.client and w.id = j.worker and d.id = j.diagnoz " +
+                        $"and j.id like '%{first}%' and concat (c.name, c.surname) like '%{second}%' and concat (w.name, w.surname) like '%{third}%' and j.time like '%{fourth}%' and d.diagnoz like '%{fifth}%' and j.healing like '%{sixth}%' and j.rest like '%{seventh}%'";
                     break;
                 case 2:
-                    queryString = $"select c.id , c.name, c.surname ,c.phone ,c.age ,  (ac.login +';' +ac.password)\r\nfrom client c,  accounts ac\r\nwhere   ac.id = c.id {search}";
+                    queryString = $"select c.id , c.name, c.surname ,c.phone ,c.age ,  (ac.login +';' +ac.password) " +
+                        $"from client c,  accounts ac " +
+                        $"where   ac.id = c.id and c.id like '%{first}%' and c.name like '%{second}%' and c.surname like '%{third}%' and c.phone like '%{fourth}%' and c.age like '%{fifth}%' and concat (ac.login,ac.password) like '%{sixth}%'";
                     break;
                 case 3:
-                    queryString = $"select d.id, d.diagnoz\r\nfrom Diagnoz d {search}";
+                    queryString = $"select d.id, d.diagnoz " +
+                        $"from Diagnoz d " +
+                        $"where d.id like '%{first}%' and d.diagnoz like '%{second}%'";
                     break;
                 case 4:
-                    queryString = $"select wr.id, wr.name, wr.surname, r.name, cab.id,  ac.login+ ';'+ac.password\r\nfrom workers wr, cabinets cab, rang r,accounts ac\r\nwhere  ac.id =wr.id and r.id = cab.rang and cab.id = wr.cabinet {search}";
+                    queryString = $"select wr.id, wr.name, wr.surname, r.name, cab.id,  ac.login+ ';'+ac.password " +
+                        $"from workers wr, cabinets cab, rang r,accounts ac " +
+                        $"where  ac.id =wr.id and r.id = cab.rang and cab.id = wr.cabinet " +
+                        $"and wr.id like '%{first}%' and wr.name like '%{second}%' and wr.surname like '%{third}%' and r.name like '%{fourth}%' and cab.id like '%{fifth}%' and concat (ac.login , ac.password) like '%{sixth}%'";
                     break;
                 case 5:
-                    queryString = $"select ac.id, ac.login, ac.password, rl.rols\r\nfrom accounts ac, rols rl\r\nwhere rl.id = ac.id {search}";
+                    queryString = $"select ac.id, ac.login, ac.password, rl.rols " +
+                        $"from accounts ac, rols rl " +
+                        $"where rl.id = ac.id " +
+                        $"and ac.id like '%{first}%' and ac.login like '%{second}%' and ac.password like '%{third}%' and rl.rols like '%{fourth}%'";
                     break;
                 case 6:
-                    queryString = $"select r.id, r.name\r\nfrom rang r {search}";
+                    queryString = $"select r.id, r.name " +
+                        $"from rang r " +
+                        $"where r.id like '%{first}%' and r.name like '%{second}%'";
                     break;
                 case 7:
-                    queryString = $"select rl.id , rl.rols\r\nfrom rols rl {search}";
+                    queryString = $"select rl.id , rl.rols " +
+                        $"from rols rl " +
+                        $"where rl.id like '%{first}%' and rl.rols like '%{second}%'";
                     break;
                 case 8:
-                    queryString = $"select cb.id , r.name\r\nfrom cabinets cb, rang r\r\nwhere r.id = cb.rang {search}";
+                    queryString = $"select cb.id , r.name " +
+                        $"from cabinets cb, rang r " +
+                        $"where r.id = cb.rang " +
+                        $"and cb.id like '%{first}%' and r.name like '%{second}%'";
                     break;
             }
 
@@ -261,14 +281,42 @@ namespace Med.Forms
         {
             int index;
             indexpage(out index, out dgw);
-            string where = "and concat (j.id, c.name,c.surname,  w.name , w.surname, j.time, d.diagnoz , j.healing, j.rest) like '%"+searchValues+"'";
+            int filtrindex = searchPole.SelectedIndex;
+            string first = "";
+            string second = "";
+            string third = "";
+            string fourth = "";
+            string fifth = "";
+            string sixth = "";
+            string seventh = "";
+            switch (filtrindex + 1)
+            {                  
+                case 1:
+                    first = searchValues.ToString();
+                    break;
+                case 2:
+                    second = searchValues.ToString();
+                    break;
+                case 3:
+                    third = searchValues.ToString();
+                     break;
+                case 4:
+                    fourth = searchValues.ToString();
+                     break;
+                case 5:
+                    fifth = searchValues.ToString();
+                     break;
+                case 6:
+                    sixth = searchValues.ToString();
+                    break;
+                case 7:
+                    seventh = searchValues.ToString();
+                    break;
+                default:
+                    break;
+            }
 
-
-
-
-
-
-            RefresDataGrid(dgw, index, where);
+            RefresDataGrid(dgw, index, first,second,third,fourth,fifth,sixth,seventh);
         }
 
 
@@ -280,7 +328,8 @@ namespace Med.Forms
         private void searchtags(int index)
         {
             searchPole.Items.Clear();
-            searchPole.Text = "";            
+            /*searchPole.Text = searchPole.Items[0].ToString();  //доделать первый предмет*/
+            
             indexpage(out index, out dgw);
             List<string> tags = new List<string> { };
             for (int i = 0;i<dgw.Columns.Count;i++)
@@ -316,6 +365,7 @@ namespace Med.Forms
                     break;
             }*/
             string[] tagsstring = tags.ToArray();
+            searchPole.Text = tagsstring[0];
             searchPole.Items.AddRange(tagsstring);
 
         }
@@ -356,7 +406,7 @@ namespace Med.Forms
                     break;
             }*/
 
-            RefresDataGrid(dgw, index,"");
+            RefresDataGrid(dgw, index,"", "", "", "", "", "", "");
             searchtags(index);
         }
 
@@ -376,7 +426,7 @@ namespace Med.Forms
             if (result == DialogResult.Yes)
             {
                 deleteRow(index, id);
-                RefresDataGrid(dgw, index,"");
+                RefresDataGrid(dgw, index,"", "", "", "", "", "", "");
             }
 
             this.TopMost = true;

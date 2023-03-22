@@ -25,7 +25,7 @@ namespace Med
             }
             items = strings.ToArray();
             reader.Close();
-           
+           //45
         }
 
     }

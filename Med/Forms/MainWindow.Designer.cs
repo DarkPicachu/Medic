@@ -140,6 +140,7 @@
             butAdd.TabIndex = 5;
             butAdd.Text = "Добавить";
             butAdd.UseVisualStyleBackColor = true;
+            butAdd.Click += butAdd_Click;
             // 
             // butEdit
             // 

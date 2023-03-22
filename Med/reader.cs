@@ -1,7 +1,11 @@
-﻿using System;
+﻿using Med.Forms;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
+using System.Reflection;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +30,11 @@ namespace Med
             items = strings.ToArray();
             reader.Close();
            //45
+        }
+        public void refresh(int work)
+        {/*
+            MainWindow main = new MainWindow(work);
+            main.RefresDataGrid("", "", "", "", "", "", "");*/
         }
 
     }

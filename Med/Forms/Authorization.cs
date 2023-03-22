@@ -26,7 +26,7 @@ namespace Med.Forms
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
 
-            string querystring = $"select rol, id from accounts where login = '{login}' and password='{password}'";
+            string querystring = $"select ac.rol, w.id from accounts ac, workers w where ac.login = '{login}' and ac.password='{password}' and ac.id = w.account";
 
             SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
 
@@ -35,11 +35,10 @@ namespace Med.Forms
             role = Convert.ToInt32(table.Rows[0][0]);
             idaccount = Convert.ToInt32(table.Rows[0][1]);
             JornalForm medKart = new JornalForm(role);
-            MainWindow mainWindow = new MainWindow(role);
+            MainWindow mainWindow = new MainWindow(idaccount);
             if (role == 1)
             {
                 mainWindow.Show();
-                mainWindow.accNames(textBox1.Text, textBox2.Text);
                 this.Hide();
             }
             else if (role == 2)

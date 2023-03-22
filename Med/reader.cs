@@ -31,11 +31,7 @@ namespace Med
             reader.Close();
            //45
         }
-        public void refresh(int work)
-        {/*
-            MainWindow main = new MainWindow(work);
-            main.RefresDataGrid("", "", "", "", "", "", "");*/
-        }
+
 
     }
 }

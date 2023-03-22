@@ -336,13 +336,13 @@ namespace Med.Forms
             switch (index)
             {
                 case 1:
-                    table_name = "journal";
+                    table_name = "jornal";
                     break;
                 case 2:
                     table_name = "client";
                     break;
                 case 3:
-                    table_name = "Diagnoz";
+                    table_name = "diagnoz";
                     break;
                 case 4:
                     table_name = "workers";

@@ -18,7 +18,7 @@ namespace Med
         public void read(string select,string from ,string index,string item, out string[]items)
         {
             List<string> strings= new List<string>();            
-            querystring = $"select "+select+"\r\nfrom "+from+" \r\nwhere CHARINDEX('" + item + "', "+index+")>0";
+            querystring = $"select {select}\r\nfrom {from} \r\nwhere {index} like '%{item}%'";
 
             SqlCommand cmd = new SqlCommand(querystring, dataBase.getConnection());
             dataBase.openConnection();

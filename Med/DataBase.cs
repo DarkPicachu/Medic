@@ -5,7 +5,7 @@ namespace Med
     class DataBase
     {
 
-            SqlConnection con = new SqlConnection(@"Data Source=kab511comp02\ELITASQL;Initial Catalog=hospital;Integrated Security=True");
+            SqlConnection con = new SqlConnection(@"Data Source=kab210comp02\ELITASQL;Initial Catalog=hospital;Integrated Security=True");
 
             public void openConnection()
             {

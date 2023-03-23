@@ -21,16 +21,7 @@ namespace Med
             InitializeComponent();
 
             work = worker;
-            /*string[] items = { };
-
-            reader reader = new reader();
-
-            reader.read("diagnoz", "diagnoz", "diagnoz", "", out items);
-            comboBox1.Items.AddRange(items);
-            reader.read("name+' '+ surname", "client", "(name + surname)", "", out items);
-            comboBox2.Items.AddRange(items);*/
-
-            dataBase.openConnection();
+           /*dataBase.openConnection();
             string query = $"select * from diagnoz";
             string query2 = $"select * from client";
             SqlCommand command = new SqlCommand(query, dataBase.getConnection());
@@ -46,7 +37,13 @@ namespace Med
             for (int i = 0; i < table2.Rows.Count; i++)
             {
                 comboBox2.Items.Add(table2.Rows[i][1] + " " + table2.Rows[i][2]);
-            }
+            }*/
+            string[] items = { };
+            reader reader = new reader();
+            reader.read("diagnoz", "diagnoz", "diagnoz", comboBox1.Text, out items);
+            comboBox1.Items.AddRange(items);
+            reader.read("name+' '+ surname", "client", "(name + surname)", comboBox2.Text, out items);
+            comboBox2.Items.AddRange(items);
 
 
         }        
@@ -80,10 +77,18 @@ namespace Med
             string heal = textBox4.Text;
             string rest = textBox5.Text;
             string querystring = $"insert into jornal (client, worker, time, diagnoz , healing,rest)values((select  id from client where (name +' ' +surname) = '{name}'), '{work}','{dateTime}', (select  id from diagnoz where (diagnoz) = '{diagnoz}'),'{heal}','{rest}')";
-            SqlCommand cmd = new SqlCommand(querystring,dataBase.getConnection());
-            dataBase.openConnection();
-            cmd.ExecuteNonQuery();
-            dataBase.closeConnection();
+            try
+            {
+                SqlCommand cmd = new SqlCommand(querystring, dataBase.getConnection());
+                dataBase.openConnection();
+                cmd.ExecuteNonQuery();
+                dataBase.closeConnection();
+            }
+            catch 
+            {
+                MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             this.Close();
         }
 

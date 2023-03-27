@@ -15,7 +15,7 @@ namespace Med
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             
-            Application.Run(new KabsForm());
+            Application.Run(new WorkersForm());
         }
     }
 }

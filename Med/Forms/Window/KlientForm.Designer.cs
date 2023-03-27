@@ -65,13 +65,16 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(61, 23);
             this.textBox3.TabIndex = 2;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(12, 102);
+            this.textBox5.MaxLength = 11;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(161, 23);
             this.textBox5.TabIndex = 4;
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // label1
             // 
@@ -121,31 +124,33 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(416, 217);
+            this.button1.Location = new System.Drawing.Point(319, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(91, 37);
             this.button1.TabIndex = 11;
             this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(305, 217);
+            this.button2.Location = new System.Drawing.Point(416, 217);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(91, 37);
             this.button2.TabIndex = 12;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(179, 84);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 15);
+            this.label5.Size = new System.Drawing.Size(92, 15);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Id аккаунта";
+            this.label5.Text = "Логин аккаунта";
             // 
             // label7
             // 
@@ -167,28 +172,12 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "afoodfswfwe",
-            "werewrw",
-            "qweqwe",
-            "aboba",
-            "ivan",
-            "psfp5",
-            "sdfdsf",
-            "asdasdq",
-            "ewwetw",
-            "qefdsgew",
-            "qw12313",
-            "ewerqeqwe",
-            "xczscxzxc",
-            "xvxcvbcxb",
-            "asdasdas",
-            "qweqweqw",
-            "rtrtr",
-            "88001231"});
+            ""});
             this.comboBox1.Location = new System.Drawing.Point(179, 102);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 23);
             this.comboBox1.TabIndex = 13;
+            this.comboBox1.TextUpdate += new System.EventHandler(this.comboBox1_TextUpdate);
             // 
             // KlientForm
             // 

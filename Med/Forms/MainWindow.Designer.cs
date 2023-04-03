@@ -28,491 +28,507 @@
         /// </summary>
         private void InitializeComponent()
         {
-            butDel = new Button();
-            menuStrip1 = new MenuStrip();
-            accName = new ToolStripTextBox();
-            searchValues = new TextBox();
-            butSearch = new Button();
-            butAdd = new Button();
-            butEdit = new Button();
-            label1 = new Label();
-            searchPole = new ComboBox();
-            label2 = new Label();
-            tabControl1 = new TabControl();
-            tab1 = new TabPage();
-            dataGridView1 = new DataGridView();
-            tab2 = new TabPage();
-            dataGridView2 = new DataGridView();
-            tab3 = new TabPage();
-            dataGridView3 = new DataGridView();
-            tab4 = new TabPage();
-            dataGridView4 = new DataGridView();
-            tab5 = new TabPage();
-            dataGridView5 = new DataGridView();
-            tab6 = new TabPage();
-            dataGridView6 = new DataGridView();
-            tab7 = new TabPage();
-            dataGridView7 = new DataGridView();
-            tab8 = new TabPage();
-            dataGridView8 = new DataGridView();
-            filtrValues = new TextBox();
-            butFiltrAdd = new Button();
-            filtrPole = new ComboBox();
-            filtrList = new ListBox();
-            butFilrtClear = new Button();
-            butFiltrDel = new Button();
-            butFiltrSearch = new Button();
-            menuStrip1.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tab1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tab2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            tab3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
-            tab4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
-            tab5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
-            tab6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).BeginInit();
-            tab7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).BeginInit();
-            tab8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView8).BeginInit();
-            SuspendLayout();
+            this.butDel = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.accName = new System.Windows.Forms.ToolStripTextBox();
+            this.searchValues = new System.Windows.Forms.TextBox();
+            this.butSearch = new System.Windows.Forms.Button();
+            this.butAdd = new System.Windows.Forms.Button();
+            this.butEdit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchPole = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tab2 = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tab3 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tab4 = new System.Windows.Forms.TabPage();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.tab5 = new System.Windows.Forms.TabPage();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.tab6 = new System.Windows.Forms.TabPage();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.tab7 = new System.Windows.Forms.TabPage();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.tab8 = new System.Windows.Forms.TabPage();
+            this.dataGridView8 = new System.Windows.Forms.DataGridView();
+            this.filtrValues = new System.Windows.Forms.TextBox();
+            this.butFiltrAdd = new System.Windows.Forms.Button();
+            this.filtrPole = new System.Windows.Forms.ComboBox();
+            this.filtrList = new System.Windows.Forms.ListBox();
+            this.butFilrtClear = new System.Windows.Forms.Button();
+            this.butFiltrDel = new System.Windows.Forms.Button();
+            this.butFiltrSearch = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tab1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tab2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tab3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tab4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tab5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.tab6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.tab7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
+            this.tab8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
+            this.SuspendLayout();
             // 
             // butDel
             // 
-            butDel.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butDel.Location = new Point(12, 33);
-            butDel.Name = "butDel";
-            butDel.Size = new Size(92, 32);
-            butDel.TabIndex = 1;
-            butDel.Text = "Удалить";
-            butDel.UseVisualStyleBackColor = true;
-            butDel.Click += butDel_Click;
+            this.butDel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butDel.Location = new System.Drawing.Point(12, 33);
+            this.butDel.Name = "butDel";
+            this.butDel.Size = new System.Drawing.Size(92, 32);
+            this.butDel.TabIndex = 1;
+            this.butDel.Text = "Удалить";
+            this.butDel.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
-            menuStrip1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { accName });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1079, 24);
-            menuStrip1.TabIndex = 2;
-            menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.accName});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1079, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // accName
             // 
-            accName.BorderStyle = BorderStyle.None;
-            accName.Enabled = false;
-            accName.Name = "accName";
-            accName.Size = new Size(150, 20);
+            this.accName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.accName.Enabled = false;
+            this.accName.Name = "accName";
+            this.accName.Size = new System.Drawing.Size(150, 20);
             // 
             // searchValues
             // 
-            searchValues.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchValues.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            searchValues.Location = new Point(807, 137);
-            searchValues.Name = "searchValues";
-            searchValues.Size = new Size(202, 26);
-            searchValues.TabIndex = 3;
+            this.searchValues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchValues.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.searchValues.Location = new System.Drawing.Point(807, 137);
+            this.searchValues.Name = "searchValues";
+            this.searchValues.Size = new System.Drawing.Size(202, 26);
+            this.searchValues.TabIndex = 3;
             // 
             // butSearch
             // 
-            butSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            butSearch.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butSearch.Location = new Point(934, 107);
-            butSearch.Name = "butSearch";
-            butSearch.Size = new Size(75, 28);
-            butSearch.TabIndex = 4;
-            butSearch.Text = "Поиск";
-            butSearch.UseVisualStyleBackColor = true;
-            butSearch.Click += butSearch_Click;
+            this.butSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butSearch.Location = new System.Drawing.Point(934, 107);
+            this.butSearch.Name = "butSearch";
+            this.butSearch.Size = new System.Drawing.Size(75, 28);
+            this.butSearch.TabIndex = 4;
+            this.butSearch.Text = "Поиск";
+            this.butSearch.UseVisualStyleBackColor = true;
             // 
             // butAdd
             // 
-            butAdd.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butAdd.Location = new Point(110, 33);
-            butAdd.Name = "butAdd";
-            butAdd.Size = new Size(92, 32);
-            butAdd.TabIndex = 5;
-            butAdd.Text = "Добавить";
-            butAdd.UseVisualStyleBackColor = true;
-            butAdd.Click += butAdd_Click;
+            this.butAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butAdd.Location = new System.Drawing.Point(110, 33);
+            this.butAdd.Name = "butAdd";
+            this.butAdd.Size = new System.Drawing.Size(92, 32);
+            this.butAdd.TabIndex = 5;
+            this.butAdd.Text = "Добавить";
+            this.butAdd.UseVisualStyleBackColor = true;
             // 
             // butEdit
             // 
-            butEdit.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butEdit.Location = new Point(208, 33);
-            butEdit.Name = "butEdit";
-            butEdit.Size = new Size(92, 32);
-            butEdit.TabIndex = 6;
-            butEdit.Text = "Изменить";
-            butEdit.UseVisualStyleBackColor = true;
+            this.butEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butEdit.Location = new System.Drawing.Point(208, 33);
+            this.butEdit.Name = "butEdit";
+            this.butEdit.Size = new System.Drawing.Size(92, 32);
+            this.butEdit.TabIndex = 6;
+            this.butEdit.Text = "Изменить";
+            this.butEdit.UseVisualStyleBackColor = true;
+            this.butEdit.Click += new System.EventHandler(this.butEdit_Click);
             // 
             // label1
             // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(807, 70);
-            label1.Name = "label1";
-            label1.Size = new Size(54, 19);
-            label1.TabIndex = 8;
-            label1.Text = "Поиск";
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(807, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 19);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Поиск";
             // 
             // searchPole
             // 
-            searchPole.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            searchPole.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            searchPole.FormattingEnabled = true;
-            searchPole.Location = new Point(807, 108);
-            searchPole.Name = "searchPole";
-            searchPole.Size = new Size(121, 27);
-            searchPole.TabIndex = 9;
+            this.searchPole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchPole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.searchPole.FormattingEnabled = true;
+            this.searchPole.Location = new System.Drawing.Point(807, 108);
+            this.searchPole.Name = "searchPole";
+            this.searchPole.Size = new System.Drawing.Size(121, 27);
+            this.searchPole.TabIndex = 9;
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label2.AutoSize = true;
-            label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(807, 173);
-            label2.Name = "label2";
-            label2.Size = new Size(64, 19);
-            label2.TabIndex = 10;
-            label2.Text = "Фильтр";
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(807, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 19);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Фильтр";
             // 
             // tabControl1
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(tab1);
-            tabControl1.Controls.Add(tab2);
-            tabControl1.Controls.Add(tab3);
-            tabControl1.Controls.Add(tab4);
-            tabControl1.Controls.Add(tab5);
-            tabControl1.Controls.Add(tab6);
-            tabControl1.Controls.Add(tab7);
-            tabControl1.Controls.Add(tab8);
-            tabControl1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            tabControl1.ImeMode = ImeMode.NoControl;
-            tabControl1.Location = new Point(12, 71);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(789, 505);
-            tabControl1.TabIndex = 14;
-            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tab1);
+            this.tabControl1.Controls.Add(this.tab2);
+            this.tabControl1.Controls.Add(this.tab3);
+            this.tabControl1.Controls.Add(this.tab4);
+            this.tabControl1.Controls.Add(this.tab5);
+            this.tabControl1.Controls.Add(this.tab6);
+            this.tabControl1.Controls.Add(this.tab7);
+            this.tabControl1.Controls.Add(this.tab8);
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tabControl1.Location = new System.Drawing.Point(12, 71);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(789, 505);
+            this.tabControl1.TabIndex = 14;
             // 
             // tab1
             // 
-            tab1.Controls.Add(dataGridView1);
-            tab1.Location = new Point(4, 28);
-            tab1.Name = "tab1";
-            tab1.Padding = new Padding(3);
-            tab1.Size = new Size(781, 473);
-            tab1.TabIndex = 0;
-            tab1.Text = "Журнал";
-            tab1.UseVisualStyleBackColor = true;
+            this.tab1.Controls.Add(this.dataGridView1);
+            this.tab1.Location = new System.Drawing.Point(4, 28);
+            this.tab1.Name = "tab1";
+            this.tab1.Padding = new System.Windows.Forms.Padding(3);
+            this.tab1.Size = new System.Drawing.Size(781, 473);
+            this.tab1.TabIndex = 0;
+            this.tab1.Text = "Журнал";
+            this.tab1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(781, 473);
-            dataGridView1.TabIndex = 0;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView1.TabIndex = 0;
             // 
             // tab2
             // 
-            tab2.Controls.Add(dataGridView2);
-            tab2.Location = new Point(4, 28);
-            tab2.Name = "tab2";
-            tab2.Padding = new Padding(3);
-            tab2.Size = new Size(781, 473);
-            tab2.TabIndex = 1;
-            tab2.Text = "Клиенты";
-            tab2.UseVisualStyleBackColor = true;
+            this.tab2.Controls.Add(this.dataGridView2);
+            this.tab2.Location = new System.Drawing.Point(4, 28);
+            this.tab2.Name = "tab2";
+            this.tab2.Padding = new System.Windows.Forms.Padding(3);
+            this.tab2.Size = new System.Drawing.Size(781, 473);
+            this.tab2.TabIndex = 1;
+            this.tab2.Text = "Клиенты";
+            this.tab2.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
-            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(0, 0);
-            dataGridView2.MultiSelect = false;
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(781, 473);
-            dataGridView2.TabIndex = 1;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowTemplate.Height = 25;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView2.TabIndex = 1;
             // 
             // tab3
             // 
-            tab3.Controls.Add(dataGridView3);
-            tab3.Location = new Point(4, 28);
-            tab3.Name = "tab3";
-            tab3.Size = new Size(781, 473);
-            tab3.TabIndex = 2;
-            tab3.Text = "Диагнозы";
-            tab3.UseVisualStyleBackColor = true;
+            this.tab3.Controls.Add(this.dataGridView3);
+            this.tab3.Location = new System.Drawing.Point(4, 28);
+            this.tab3.Name = "tab3";
+            this.tab3.Size = new System.Drawing.Size(781, 473);
+            this.tab3.TabIndex = 2;
+            this.tab3.Text = "Диагнозы";
+            this.tab3.UseVisualStyleBackColor = true;
             // 
             // dataGridView3
             // 
-            dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(0, 0);
-            dataGridView3.MultiSelect = false;
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.ReadOnly = true;
-            dataGridView3.RowTemplate.Height = 25;
-            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView3.Size = new Size(781, 473);
-            dataGridView3.TabIndex = 1;
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.MultiSelect = false;
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 25;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView3.TabIndex = 1;
             // 
             // tab4
             // 
-            tab4.Controls.Add(dataGridView4);
-            tab4.Location = new Point(4, 28);
-            tab4.Name = "tab4";
-            tab4.Size = new Size(781, 473);
-            tab4.TabIndex = 3;
-            tab4.Text = "Работники";
-            tab4.UseVisualStyleBackColor = true;
+            this.tab4.Controls.Add(this.dataGridView4);
+            this.tab4.Location = new System.Drawing.Point(4, 28);
+            this.tab4.Name = "tab4";
+            this.tab4.Size = new System.Drawing.Size(781, 473);
+            this.tab4.TabIndex = 3;
+            this.tab4.Text = "Работники";
+            this.tab4.UseVisualStyleBackColor = true;
             // 
             // dataGridView4
             // 
-            dataGridView4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Location = new Point(0, 0);
-            dataGridView4.MultiSelect = false;
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.ReadOnly = true;
-            dataGridView4.RowTemplate.Height = 25;
-            dataGridView4.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView4.Size = new Size(781, 473);
-            dataGridView4.TabIndex = 1;
+            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView4.MultiSelect = false;
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowTemplate.Height = 25;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView4.TabIndex = 1;
             // 
             // tab5
             // 
-            tab5.Controls.Add(dataGridView5);
-            tab5.Location = new Point(4, 28);
-            tab5.Name = "tab5";
-            tab5.Size = new Size(781, 473);
-            tab5.TabIndex = 4;
-            tab5.Text = "Аккаунты";
-            tab5.UseVisualStyleBackColor = true;
+            this.tab5.Controls.Add(this.dataGridView5);
+            this.tab5.Location = new System.Drawing.Point(4, 28);
+            this.tab5.Name = "tab5";
+            this.tab5.Size = new System.Drawing.Size(781, 473);
+            this.tab5.TabIndex = 4;
+            this.tab5.Text = "Аккаунты";
+            this.tab5.UseVisualStyleBackColor = true;
             // 
             // dataGridView5
             // 
-            dataGridView5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new Point(0, 0);
-            dataGridView5.MultiSelect = false;
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.ReadOnly = true;
-            dataGridView5.RowTemplate.Height = 25;
-            dataGridView5.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView5.Size = new Size(781, 473);
-            dataGridView5.TabIndex = 1;
+            this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView5.MultiSelect = false;
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowTemplate.Height = 25;
+            this.dataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView5.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView5.TabIndex = 1;
             // 
             // tab6
             // 
-            tab6.Controls.Add(dataGridView6);
-            tab6.Location = new Point(4, 28);
-            tab6.Name = "tab6";
-            tab6.Size = new Size(781, 473);
-            tab6.TabIndex = 5;
-            tab6.Text = "Должности";
-            tab6.UseVisualStyleBackColor = true;
+            this.tab6.Controls.Add(this.dataGridView6);
+            this.tab6.Location = new System.Drawing.Point(4, 28);
+            this.tab6.Name = "tab6";
+            this.tab6.Size = new System.Drawing.Size(781, 473);
+            this.tab6.TabIndex = 5;
+            this.tab6.Text = "Должности";
+            this.tab6.UseVisualStyleBackColor = true;
             // 
             // dataGridView6
             // 
-            dataGridView6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView6.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView6.Location = new Point(0, 0);
-            dataGridView6.MultiSelect = false;
-            dataGridView6.Name = "dataGridView6";
-            dataGridView6.ReadOnly = true;
-            dataGridView6.RowTemplate.Height = 25;
-            dataGridView6.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView6.Size = new Size(781, 473);
-            dataGridView6.TabIndex = 1;
+            this.dataGridView6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView6.MultiSelect = false;
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            this.dataGridView6.RowTemplate.Height = 25;
+            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView6.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView6.TabIndex = 1;
             // 
             // tab7
             // 
-            tab7.Controls.Add(dataGridView7);
-            tab7.Location = new Point(4, 28);
-            tab7.Name = "tab7";
-            tab7.Size = new Size(781, 473);
-            tab7.TabIndex = 6;
-            tab7.Text = "Роли";
-            tab7.UseVisualStyleBackColor = true;
+            this.tab7.Controls.Add(this.dataGridView7);
+            this.tab7.Location = new System.Drawing.Point(4, 28);
+            this.tab7.Name = "tab7";
+            this.tab7.Size = new System.Drawing.Size(781, 473);
+            this.tab7.TabIndex = 6;
+            this.tab7.Text = "Роли";
+            this.tab7.UseVisualStyleBackColor = true;
             // 
             // dataGridView7
             // 
-            dataGridView7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView7.Location = new Point(0, 0);
-            dataGridView7.MultiSelect = false;
-            dataGridView7.Name = "dataGridView7";
-            dataGridView7.ReadOnly = true;
-            dataGridView7.RowTemplate.Height = 25;
-            dataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView7.Size = new Size(781, 473);
-            dataGridView7.TabIndex = 1;
+            this.dataGridView7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView7.MultiSelect = false;
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.ReadOnly = true;
+            this.dataGridView7.RowTemplate.Height = 25;
+            this.dataGridView7.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView7.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView7.TabIndex = 1;
             // 
             // tab8
             // 
-            tab8.Controls.Add(dataGridView8);
-            tab8.Location = new Point(4, 28);
-            tab8.Name = "tab8";
-            tab8.Size = new Size(781, 473);
-            tab8.TabIndex = 7;
-            tab8.Text = "Кабинеты";
-            tab8.UseVisualStyleBackColor = true;
+            this.tab8.Controls.Add(this.dataGridView8);
+            this.tab8.Location = new System.Drawing.Point(4, 28);
+            this.tab8.Name = "tab8";
+            this.tab8.Size = new System.Drawing.Size(781, 473);
+            this.tab8.TabIndex = 7;
+            this.tab8.Text = "Кабинеты";
+            this.tab8.UseVisualStyleBackColor = true;
             // 
             // dataGridView8
             // 
-            dataGridView8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridView8.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView8.Location = new Point(0, 0);
-            dataGridView8.MultiSelect = false;
-            dataGridView8.Name = "dataGridView8";
-            dataGridView8.ReadOnly = true;
-            dataGridView8.RowTemplate.Height = 25;
-            dataGridView8.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView8.Size = new Size(781, 473);
-            dataGridView8.TabIndex = 1;
+            this.dataGridView8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView8.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView8.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView8.MultiSelect = false;
+            this.dataGridView8.Name = "dataGridView8";
+            this.dataGridView8.ReadOnly = true;
+            this.dataGridView8.RowTemplate.Height = 25;
+            this.dataGridView8.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView8.Size = new System.Drawing.Size(781, 473);
+            this.dataGridView8.TabIndex = 1;
             // 
             // filtrValues
             // 
-            filtrValues.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            filtrValues.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            filtrValues.Location = new Point(807, 235);
-            filtrValues.Name = "filtrValues";
-            filtrValues.Size = new Size(202, 26);
-            filtrValues.TabIndex = 11;
+            this.filtrValues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filtrValues.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.filtrValues.Location = new System.Drawing.Point(807, 235);
+            this.filtrValues.Name = "filtrValues";
+            this.filtrValues.Size = new System.Drawing.Size(202, 26);
+            this.filtrValues.TabIndex = 11;
             // 
             // butFiltrAdd
             // 
-            butFiltrAdd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            butFiltrAdd.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butFiltrAdd.Location = new Point(934, 205);
-            butFiltrAdd.Name = "butFiltrAdd";
-            butFiltrAdd.Size = new Size(75, 28);
-            butFiltrAdd.TabIndex = 12;
-            butFiltrAdd.Text = "Добавить";
-            butFiltrAdd.UseVisualStyleBackColor = true;
+            this.butFiltrAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butFiltrAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butFiltrAdd.Location = new System.Drawing.Point(934, 205);
+            this.butFiltrAdd.Name = "butFiltrAdd";
+            this.butFiltrAdd.Size = new System.Drawing.Size(75, 28);
+            this.butFiltrAdd.TabIndex = 12;
+            this.butFiltrAdd.Text = "Добавить";
+            this.butFiltrAdd.UseVisualStyleBackColor = true;
             // 
             // filtrPole
             // 
-            filtrPole.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            filtrPole.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            filtrPole.FormattingEnabled = true;
-            filtrPole.Location = new Point(807, 206);
-            filtrPole.Name = "filtrPole";
-            filtrPole.Size = new Size(121, 27);
-            filtrPole.TabIndex = 13;
+            this.filtrPole.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filtrPole.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.filtrPole.FormattingEnabled = true;
+            this.filtrPole.Location = new System.Drawing.Point(807, 206);
+            this.filtrPole.Name = "filtrPole";
+            this.filtrPole.Size = new System.Drawing.Size(121, 27);
+            this.filtrPole.TabIndex = 13;
             // 
             // filtrList
             // 
-            filtrList.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            filtrList.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            filtrList.FormattingEnabled = true;
-            filtrList.ItemHeight = 19;
-            filtrList.Location = new Point(808, 263);
-            filtrList.Name = "filtrList";
-            filtrList.Size = new Size(120, 118);
-            filtrList.TabIndex = 15;
+            this.filtrList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.filtrList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.filtrList.FormattingEnabled = true;
+            this.filtrList.ItemHeight = 19;
+            this.filtrList.Location = new System.Drawing.Point(808, 263);
+            this.filtrList.Name = "filtrList";
+            this.filtrList.Size = new System.Drawing.Size(120, 118);
+            this.filtrList.TabIndex = 15;
             // 
             // butFilrtClear
             // 
-            butFilrtClear.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            butFilrtClear.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butFilrtClear.Location = new Point(934, 351);
-            butFilrtClear.Name = "butFilrtClear";
-            butFilrtClear.Size = new Size(75, 23);
-            butFilrtClear.TabIndex = 16;
-            butFilrtClear.Text = "Сброс все";
-            butFilrtClear.UseVisualStyleBackColor = true;
+            this.butFilrtClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butFilrtClear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butFilrtClear.Location = new System.Drawing.Point(934, 351);
+            this.butFilrtClear.Name = "butFilrtClear";
+            this.butFilrtClear.Size = new System.Drawing.Size(75, 23);
+            this.butFilrtClear.TabIndex = 16;
+            this.butFilrtClear.Text = "Сброс все";
+            this.butFilrtClear.UseVisualStyleBackColor = true;
             // 
             // butFiltrDel
             // 
-            butFiltrDel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            butFiltrDel.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butFiltrDel.Location = new Point(934, 322);
-            butFiltrDel.Name = "butFiltrDel";
-            butFiltrDel.Size = new Size(75, 23);
-            butFiltrDel.TabIndex = 17;
-            butFiltrDel.Text = "Удалить";
-            butFiltrDel.UseVisualStyleBackColor = true;
+            this.butFiltrDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butFiltrDel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butFiltrDel.Location = new System.Drawing.Point(934, 322);
+            this.butFiltrDel.Name = "butFiltrDel";
+            this.butFiltrDel.Size = new System.Drawing.Size(75, 23);
+            this.butFiltrDel.TabIndex = 17;
+            this.butFiltrDel.Text = "Удалить";
+            this.butFiltrDel.UseVisualStyleBackColor = true;
             // 
             // butFiltrSearch
             // 
-            butFiltrSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            butFiltrSearch.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            butFiltrSearch.Location = new Point(934, 264);
-            butFiltrSearch.Name = "butFiltrSearch";
-            butFiltrSearch.Size = new Size(75, 52);
-            butFiltrSearch.TabIndex = 18;
-            butFiltrSearch.Text = "Поиск по фильтру";
-            butFiltrSearch.UseVisualStyleBackColor = true;
+            this.butFiltrSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.butFiltrSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butFiltrSearch.Location = new System.Drawing.Point(934, 264);
+            this.butFiltrSearch.Name = "butFiltrSearch";
+            this.butFiltrSearch.Size = new System.Drawing.Size(75, 52);
+            this.butFiltrSearch.TabIndex = 18;
+            this.butFiltrSearch.Text = "Поиск по фильтру";
+            this.butFiltrSearch.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1079, 580);
-            Controls.Add(butFiltrSearch);
-            Controls.Add(butFiltrDel);
-            Controls.Add(butFilrtClear);
-            Controls.Add(filtrList);
-            Controls.Add(tabControl1);
-            Controls.Add(filtrPole);
-            Controls.Add(butFiltrAdd);
-            Controls.Add(filtrValues);
-            Controls.Add(label2);
-            Controls.Add(searchPole);
-            Controls.Add(label1);
-            Controls.Add(butEdit);
-            Controls.Add(butAdd);
-            Controls.Add(butSearch);
-            Controls.Add(searchValues);
-            Controls.Add(butDel);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
-            MinimumSize = new Size(819, 444);
-            Name = "MainWindow";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "MainWindow";
-            FormClosed += MainWindow_FormClosed;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            tabControl1.ResumeLayout(false);
-            tab1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tab2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            tab3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            tab4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
-            tab5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
-            tab6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView6).EndInit();
-            tab7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView7).EndInit();
-            tab8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView8).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1079, 580);
+            this.Controls.Add(this.butFiltrSearch);
+            this.Controls.Add(this.butFiltrDel);
+            this.Controls.Add(this.butFilrtClear);
+            this.Controls.Add(this.filtrList);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.filtrPole);
+            this.Controls.Add(this.butFiltrAdd);
+            this.Controls.Add(this.filtrValues);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.searchPole);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.butEdit);
+            this.Controls.Add(this.butAdd);
+            this.Controls.Add(this.butSearch);
+            this.Controls.Add(this.searchValues);
+            this.Controls.Add(this.butDel);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(819, 444);
+            this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MainWindow";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tab1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tab2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tab3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tab4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tab5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.tab6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.tab7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
+            this.tab8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

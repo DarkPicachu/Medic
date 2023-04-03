@@ -13,14 +13,14 @@ namespace Med
     public partial class JornalForm : Form
     {
         DataTable table = new DataTable();
-        DataTable table2 = new DataTable();
         DataBase dataBase = new DataBase();
-        int work = 1;
-        public JornalForm(int worker)
+        GetSet getSet = new GetSet();        
+        int work = 0;
+        public JornalForm()
         {
             InitializeComponent();
 
-            work = worker;
+            work = getSet.Idworker;
            /*dataBase.openConnection();
             string query = $"select * from diagnoz";
             string query2 = $"select * from client";
@@ -38,6 +38,25 @@ namespace Med
             {
                 comboBox2.Items.Add(table2.Rows[i][1] + " " + table2.Rows[i][2]);
             }*/
+           if(getSet.Update)
+            {
+                dataBase.openConnection();
+                string query = $"select j.id , (c.name+ ' ' + c.surname), d.diagnoz , j.healing, j.rest "+
+                    $"from client c, jornal j , diagnoz d "+
+                    $"where c.id = j.client  and d.id = j.diagnoz and j.id = {getSet.Id}";
+                SqlCommand command = new SqlCommand(query, dataBase.getConnection());
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+                textBox6.Text = table.Rows[0][0].ToString();
+                comboBox2.Text = table.Rows[0][1].ToString();
+                comboBox1.Text = table.Rows[0][2].ToString();
+                textBox5.Text = table.Rows[0][3].ToString();
+                textBox4.Text = table.Rows[0][4].ToString();
+                return;
+
+            }
+
+
             string[] items = { };
             reader reader = new reader();
             reader.read("diagnoz", "diagnoz", "diagnoz", comboBox1.Text, out items);

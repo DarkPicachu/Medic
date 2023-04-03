@@ -1,38 +1,24 @@
-﻿using Microsoft.VisualBasic.Logging;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Med.Forms.Window;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Med.Forms
 {
-
-
     public partial class MainWindow : Form
     {
-
-
         DataGridView dgw = new DataGridView();
 
         DataBase dataBase = new DataBase();
         string queryString = "";
         int role;
-        public MainWindow(int id)
+        GetSet getSet = new GetSet();
+        public MainWindow()
         {
+            int id = getSet.Idworker;
             InitializeComponent();
             CreateCollumns();
             RefresDataGrid("", "", "", "", "", "", "");
             searchtags(1);
-
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
 
@@ -57,7 +43,6 @@ namespace Med.Forms
             tab7.Parent = null;
             tab8.Parent = null;
             tab6.Parent = null;
-
         }
 
         public void accNames(string log, string pas)
@@ -135,8 +120,6 @@ namespace Med.Forms
             }
 
         }
-
-
         private void ReadSingleRow(DataGridView dgw, IDataRecord record, int index)
         {
             switch (index)
@@ -167,7 +150,6 @@ namespace Med.Forms
                     break;
             }
         }
-
         public void RefresDataGrid(string first, string second, string third, string fourth, string fifth, string sixth, string seventh)
         {
             int table_index;
@@ -236,7 +218,6 @@ namespace Med.Forms
             }
             reader.Close();
         }
-
         private void butSearch_Click(object sender, EventArgs e)
         {
             int index;
@@ -278,13 +259,10 @@ namespace Med.Forms
             }
             RefresDataGrid(first, second, third, fourth, fifth, sixth, seventh);
         }
-
-
         private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
         private void searchtags(int index)
         {
             searchPole.Items.Clear();
@@ -299,7 +277,6 @@ namespace Med.Forms
             searchPole.Items.AddRange(tagsstring);
 
         }
-
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index;
@@ -307,11 +284,10 @@ namespace Med.Forms
             RefresDataGrid("", "", "", "", "", "", "");
             searchtags(index);
         }
-
-
         private void butDel_Click(object sender, EventArgs e)
         {
-            int index = tabControl1.SelectedIndex + 1;
+            int index;
+            indexpage(out index, out dgw);
             int id = Convert.ToInt32(dgw[0, dgw.CurrentRow.Index].Value.ToString());
             DialogResult result = MessageBox.Show(
                 "Вы действительно хотите удалить запись?",
@@ -332,7 +308,6 @@ namespace Med.Forms
         private void deleteRow(int index, int id)
         {
             string table_name = "";
-
             switch (index)
             {
                 case 1:
@@ -369,14 +344,86 @@ namespace Med.Forms
         private void indexpage(out int index, out DataGridView dgw)
         {
             index = tabControl1.SelectedIndex + 1;
-
             dgw = (tabControl1.Controls["tab" + index] as TabPage).Controls["dataGridView" + index] as DataGridView;
         }
 
         private void butAdd_Click(object sender, EventArgs e)
         {
-            JornalForm jornalForm = new JornalForm(role);
-            jornalForm.ShowDialog();
+            Form form = new Form();
+            int index;
+            indexpage(out index, out dgw);
+            switch (index)
+            {
+                case 1:
+                    form = new JornalForm();
+                    break;
+                case 2:
+                    form = new KlientForm();
+                    break;
+                case 3:
+                    form = new DiagnozForm();
+                    break;
+                case 4:
+                    form = new WorkersForm();
+                    break;
+                case 5:
+                    form = new AccountForm();
+                    break;
+                case 6:
+                    form = new RangForm();
+                    break;
+                case 7:
+                    form = new RoleForm();
+                    break;
+                case 8:
+                    form = new KabsForm();
+                    break;
+            }
+            form.ShowDialog();
+
+            RefresDataGrid("", "", "", "", "", "", "");
+
+        }
+
+        private void butEdit_Click(object sender, EventArgs e)
+        {
+            int index;
+            indexpage(out index, out dgw);
+            int id = Convert.ToInt32(dgw[0, dgw.CurrentRow.Index].Value.ToString());
+            getSet.Id = id;
+            getSet.Update = true;
+            Form form = new Form();
+            indexpage(out index, out dgw);
+            switch (index)
+            {
+                case 1:
+                    form = new JornalForm();
+                    break;
+                case 2:
+                    form = new KlientForm();
+                    break;
+                case 3:
+                    form = new DiagnozForm();
+                    break;
+                case 4:
+                    form = new WorkersForm();
+                    break;
+                case 5:
+                    form = new AccountForm();                    
+                    break;
+                case 6:
+                    form = new RangForm();
+                    break;
+                case 7:
+                    form = new RoleForm();
+                    break;
+                case 8:
+                    form = new KabsForm();
+                    break;
+            }
+            
+            form.ShowDialog();
+
             RefresDataGrid("", "", "", "", "", "", "");
         }
     }

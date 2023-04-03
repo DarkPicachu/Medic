@@ -22,6 +22,7 @@ namespace Med.Forms
             int role = 0;
             int idaccount = 0;
             
+            GetSet getSet = new GetSet();
             
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
@@ -34,8 +35,12 @@ namespace Med.Forms
             adapter.Fill(table);
             role = Convert.ToInt32(table.Rows[0][0]);
             idaccount = Convert.ToInt32(table.Rows[0][1]);
-            JornalForm medKart = new JornalForm(role);
-            MainWindow mainWindow = new MainWindow(idaccount);
+            /*MessageBox.Show(idaccount.ToString());*/
+            JornalForm medKart = new JornalForm();
+            MainWindow mainWindow = new MainWindow();
+            
+            getSet.Idworker = idaccount;
+            /*MessageBox.Show(getSet.Idworker.ToString());*/
             if (role == 1)
             {
                 mainWindow.Show();
@@ -47,14 +52,9 @@ namespace Med.Forms
             }
             else if (role == 3)
             {
-                medKart.ShowDialog();
+                medKart.Show();
                 this.Hide();
             }
-
-
-
-
-        
         }
     }
 }

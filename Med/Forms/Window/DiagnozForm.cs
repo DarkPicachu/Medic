@@ -22,6 +22,19 @@ namespace Med.Forms.Window
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (GetSet.Update)
+                Update();
+            else Save();
+            
+            this.Close();
+        }
+
+        private void Update()
+        {
+
+        }
+        private void Save()
+        {
             string diagnoz = textBox1.Text;
             string querystring = $"insert into diagnoz (diagnoz) " +
                 $"values('{diagnoz}')";
@@ -37,7 +50,6 @@ namespace Med.Forms.Window
                 MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

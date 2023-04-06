@@ -11,10 +11,10 @@ namespace Med.Forms
         DataBase dataBase = new DataBase();
         string queryString = "";
         int role;
-        GetSet getSet = new GetSet();
         public MainWindow()
-        {
-            int id = getSet.Idworker;
+        { 
+
+            int id = GetSet.Idworker;
             InitializeComponent();
             CreateCollumns();
             RefresDataGrid("", "", "", "", "", "", "");
@@ -390,8 +390,8 @@ namespace Med.Forms
             int index;
             indexpage(out index, out dgw);
             int id = Convert.ToInt32(dgw[0, dgw.CurrentRow.Index].Value.ToString());
-            getSet.Id = id;
-            getSet.Update = true;
+            GetSet.Id = id;
+            GetSet.Update = true;
             Form form = new Form();
             indexpage(out index, out dgw);
             switch (index)

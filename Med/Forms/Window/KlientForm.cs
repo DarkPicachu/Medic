@@ -24,8 +24,20 @@ namespace Med.Forms.Window
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {           
-            if(textBox3.Text.Length != 11)
+        {
+            if (GetSet.Update)
+                Update();
+            else Save();
+            
+            this.Close();
+        }
+        private void Update()
+        {
+
+        }
+        private void Save()
+        {
+            if (textBox3.Text.Length != 11)
             {
                 MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -44,9 +56,7 @@ namespace Med.Forms.Window
                 MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.Close();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

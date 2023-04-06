@@ -40,6 +40,18 @@ namespace Med.Forms.Window
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (GetSet.Update)
+                Update();
+            else Save();
+            
+            this.Close();
+        }
+        private void Update()
+        {
+
+        }
+        private void Save()
+        {
             string querystring = $"insert into workers (name, surname,cabinet,account) " +
                  $"values('{textBox1.Text}', '{textBox2.Text}', (select id from cabinets where id = '{comboBox1.Text}'), (select id from accounts where login = '{comboBox2.Text}'))";
             try
@@ -54,7 +66,6 @@ namespace Med.Forms.Window
                 MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

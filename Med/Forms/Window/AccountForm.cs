@@ -1,25 +1,35 @@
 ﻿using Microsoft.VisualBasic.Logging;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Policy;
 
 namespace Med.Forms.Window
 {
     public partial class AccountForm : Form
     {
         DataBase dataBase = new DataBase();
-
-        int id = 0;
-        bool update = false;
-        public int Id { get { return id; } set { id = value; }}
-        public bool Update { get { return update; }  set { update = value; } }
+        DataTable table = new DataTable();
+        
         
         public AccountForm()
         {
             InitializeComponent();
-            if(update)
+            if(GetSet.Update)
             {
-                DataTable dt = new DataTable();
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                dataBase.openConnection();
+                string query = $"select ac.id, ac.login, ac.password, rl.rols " +
+                    $"from accounts ac, rols rl " +
+                    $"where rl.id = ac.id " +
+                    $"and ac.id = {GetSet.Idacc})";
+
+                SqlCommand command = new SqlCommand(query, dataBase.getConnection());
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(table);
+                textBox3.Text = table.Rows[0][0].ToString();
+                comboBox1.Text = table.Rows[0][3].ToString();
+                textBox1.Text = table.Rows[0][1].ToString();
+                textBox2.Text = table.Rows[0][2].ToString();
+                return;
             }
             string[] items = { };
             reader reader = new reader();
@@ -28,6 +38,35 @@ namespace Med.Forms.Window
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            if (GetSet.Update)
+                Update();
+            else Save();
+            this.Close();
+        }
+        private void Update()
+        {
+            string login = textBox1.Text;
+            string password = textBox2.Text;
+            string rols = comboBox1.Text;
+            string querystring = $"update accounts set login = '{login}', " +
+                $"password = '{password}', " +
+                $"rol = (select id from rols where rols = '{rols}') " +
+                $"where id = {GetSet.Idacc}";
+            try
+            {
+                SqlCommand cmd = new SqlCommand(querystring, dataBase.getConnection());
+                dataBase.openConnection();
+                cmd.ExecuteNonQuery();
+                dataBase.closeConnection();
+            }
+            catch
+            {
+                MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+        private void Save()
         {
             string login = textBox1.Text;
             string password = textBox2.Text;
@@ -46,28 +85,6 @@ namespace Med.Forms.Window
                 MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.Close();
-        }
-        private void Updat()
-        {
-            string login = textBox1.Text;
-            string password = textBox2.Text;
-            string rols = comboBox1.Text;
-            string querystring = $"update accounts set login = '1', password = '1', rol = 1 " +
-                $"where id = 6";
-            try
-            {
-                SqlCommand cmd = new SqlCommand(querystring, dataBase.getConnection());
-                dataBase.openConnection();
-                cmd.ExecuteNonQuery();
-                dataBase.closeConnection();
-            }
-            catch
-            {
-                MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)

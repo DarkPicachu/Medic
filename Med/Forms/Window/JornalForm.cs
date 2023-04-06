@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Med
@@ -13,14 +14,13 @@ namespace Med
     public partial class JornalForm : Form
     {
         DataTable table = new DataTable();
-        DataBase dataBase = new DataBase();
-        GetSet getSet = new GetSet();        
+        DataBase dataBase = new DataBase(); 
         int work = 0;
         public JornalForm()
         {
             InitializeComponent();
 
-            work = getSet.Idworker;
+            work = GetSet.Idworker;
            /*dataBase.openConnection();
             string query = $"select * from diagnoz";
             string query2 = $"select * from client";
@@ -38,12 +38,12 @@ namespace Med
             {
                 comboBox2.Items.Add(table2.Rows[i][1] + " " + table2.Rows[i][2]);
             }*/
-           if(getSet.Update)
+           if(GetSet.Update)
             {
                 dataBase.openConnection();
-                string query = $"select j.id , (c.name+ ' ' + c.surname), d.diagnoz , j.healing, j.rest "+
+                string query = $"select j.id , (c.name+ ' ' + c.surname), d.diagnoz , j.rest, j.healing "+
                     $"from client c, jornal j , diagnoz d "+
-                    $"where c.id = j.client  and d.id = j.diagnoz and j.id = {getSet.Id}";
+                    $"where c.id = j.client  and d.id = j.diagnoz and j.id = {GetSet.Id}";
                 SqlCommand command = new SqlCommand(query, dataBase.getConnection());
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 adapter.Fill(table);
@@ -90,12 +90,25 @@ namespace Med
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DateTime dateTime =DateTime.Now;
+            if (GetSet.Update)
+                Update();
+            else
+                Save();
+            this.Close();
+        }
+
+        private void Update() 
+        {
             string name = comboBox2.Text;
             string diagnoz = comboBox1.Text;
             string heal = textBox4.Text;
             string rest = textBox5.Text;
-            string querystring = $"insert into jornal (client, worker, time, diagnoz , healing,rest)values((select  id from client where (name +' ' +surname) = '{name}'), '{work}','{dateTime}', (select  id from diagnoz where (diagnoz) = '{diagnoz}'),'{heal}','{rest}')";
+            string querystring = $"update jornal set client = (select  id from client where (name +' ' +surname) = '{name}'), " +
+                $"worker = '{work}', " +
+                $"diagnoz = (select  id from diagnoz where (diagnoz) = '{diagnoz}'), " +
+                $"healing = '{heal}', " +
+                $"rest = '{rest}' " +
+                $"where id = {textBox6.Text}"; 
             try
             {
                 SqlCommand cmd = new SqlCommand(querystring, dataBase.getConnection());
@@ -103,12 +116,32 @@ namespace Med
                 cmd.ExecuteNonQuery();
                 dataBase.closeConnection();
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            this.Close();
+        }
+        private void Save()
+        {
+            DateTime dateTime = DateTime.Now;
+            string name = comboBox2.Text;
+            string diagnoz = comboBox1.Text;
+            string heal = textBox4.Text;
+            string rest = textBox5.Text;
+            string querystring = $"update jornal (client, worker, time, diagnoz , healing,rest)values((select  id from client where (name +' ' +surname) = '{name}'), '{work}','{dateTime}', (select  id from diagnoz where (diagnoz) = '{diagnoz}'),'{heal}','{rest}')";
+            try
+            {
+                SqlCommand cmd = new SqlCommand(querystring, dataBase.getConnection());
+                dataBase.openConnection();
+                cmd.ExecuteNonQuery();
+                dataBase.closeConnection();
+            }
+            catch
+            {
+                MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void comboBox2_TextUpdate(object sender, EventArgs e)

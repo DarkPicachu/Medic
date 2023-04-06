@@ -8,12 +8,10 @@ namespace Med
 {
     internal class GetSet
     {
-        int id= 0;
-        bool update = false;
-        int idworker = 0;
-        public int Id { get { return id;  } set { id = value;} }
-        public bool Update { get { return update; } set { update = value; } }
-        public int Idworker { get { return idworker; } set { idworker = value; MessageBox.Show("111"); } }
+        public static int Id { get ;set;}
+        public static bool Update { get ;set;}
+        public  static int Idworker { get ;set;}
+        public static int ide { get; set; }
 
     }
 }

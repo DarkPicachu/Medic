@@ -21,13 +21,13 @@ namespace Med.Forms
            
             int role = 0;
             int idaccount = 0;
+
             
-            GetSet getSet = new GetSet();
             
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
 
-            string querystring = $"select ac.rol, w.id from accounts ac, workers w where ac.login = '{login}' and ac.password='{password}' and ac.id = w.account";
+            string querystring = $"select ac.rol, w.id, ac.id from accounts ac, workers w where ac.login = '{login}' and ac.password='{password}' and ac.id = w.account";
 
             SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
 
@@ -35,12 +35,10 @@ namespace Med.Forms
             adapter.Fill(table);
             role = Convert.ToInt32(table.Rows[0][0]);
             idaccount = Convert.ToInt32(table.Rows[0][1]);
-            /*MessageBox.Show(idaccount.ToString());*/
+            GetSet.Idworker = idaccount;
             JornalForm medKart = new JornalForm();
+            GetSet.Idacc = Convert.ToInt32(table.Rows[0][2]);
             MainWindow mainWindow = new MainWindow();
-            
-            getSet.Idworker = idaccount;
-            /*MessageBox.Show(getSet.Idworker.ToString());*/
             if (role == 1)
             {
                 mainWindow.Show();

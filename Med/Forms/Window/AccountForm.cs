@@ -13,8 +13,13 @@ namespace Med.Forms.Window
         
         public AccountForm()
         {
+            
             InitializeComponent();
-            if(GetSet.Update)
+            string[] items = { };
+            reader reader = new reader();
+            reader.read("rols", "rols", "rols", "", out items);
+            comboBox1.Items.AddRange(items);
+            if (GetSet.Update)
             {
                 dataBase.openConnection();
                 string query = $"select ac.id, ac.login, ac.password, rl.rols " +
@@ -31,10 +36,9 @@ namespace Med.Forms.Window
                 textBox2.Text = table.Rows[0][2].ToString();
                 return;
             }
-            string[] items = { };
-            reader reader = new reader();
-            reader.read("rols", "rols", "rols", comboBox1.Text, out items);
-            comboBox1.Items.AddRange(items);
+            label1.Visible= false;
+            label5.Visible= false;
+            textBox3.Visible= false;
         }
 
         private void button1_Click(object sender, EventArgs e)

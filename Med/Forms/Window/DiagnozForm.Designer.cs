@@ -97,6 +97,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(94, 6);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(66, 23);
             this.textBox6.TabIndex = 13;
             // 
@@ -117,6 +118,7 @@
             this.Name = "DiagnozForm";
             this.ShowIcon = false;
             this.Text = "Диагнозы";
+            this.Load += new System.EventHandler(this.DiagnozForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

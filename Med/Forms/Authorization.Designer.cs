@@ -33,6 +33,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -88,11 +89,23 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Пароль";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(106, 256);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(209, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Введен не верный логин или пароль";
+            this.label3.Visible = false;
+            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(442, 280);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -115,5 +128,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label2;
+        private Label label3;
     }
 }

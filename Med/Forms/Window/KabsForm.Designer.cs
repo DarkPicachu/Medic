@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,15 +43,6 @@
             this.textBox1.Size = new System.Drawing.Size(98, 23);
             this.textBox1.TabIndex = 0;
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Кабинет";
             // 
             // label2
             // 
@@ -112,7 +102,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(574, 460);
@@ -127,7 +116,6 @@
         #endregion
 
         private TextBox textBox1;
-        private Label label1;
         private Label label2;
         private Label label3;
         private Button button1;

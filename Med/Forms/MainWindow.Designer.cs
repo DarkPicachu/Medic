@@ -91,6 +91,7 @@
             this.butDel.TabIndex = 1;
             this.butDel.Text = "Удалить";
             this.butDel.UseVisualStyleBackColor = true;
+            this.butDel.Click += new System.EventHandler(this.butDel_Click);
             // 
             // menuStrip1
             // 
@@ -129,6 +130,7 @@
             this.butSearch.TabIndex = 4;
             this.butSearch.Text = "Поиск";
             this.butSearch.UseVisualStyleBackColor = true;
+            this.butSearch.Click += new System.EventHandler(this.butSearch_Click);
             // 
             // butAdd
             // 
@@ -139,6 +141,7 @@
             this.butAdd.TabIndex = 5;
             this.butAdd.Text = "Добавить";
             this.butAdd.UseVisualStyleBackColor = true;
+            this.butAdd.Click += new System.EventHandler(this.butAdd_Click);
             // 
             // butEdit
             // 
@@ -203,6 +206,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(789, 505);
             this.tabControl1.TabIndex = 14;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tab1
             // 

@@ -70,49 +70,49 @@ namespace Med.Forms
                 {
                     case 1:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("client", "Клиент");
-                        dgw.Columns.Add("worker", "Врач");
-                        dgw.Columns.Add("time", "Время");
-                        dgw.Columns.Add("diagnoz", "Диагноз");
-                        dgw.Columns.Add("healing", "Лечение");
-                        dgw.Columns.Add("rest", "Отдых");
+                        dgw.Columns.Add("Клиент", "Клиент");
+                        dgw.Columns.Add("Врач", "Врач");
+                        dgw.Columns.Add("Время", "Время");
+                        dgw.Columns.Add("Диагноз", "Диагноз");
+                        dgw.Columns.Add("Лечение", "Лечение");
+                        dgw.Columns.Add("Отдых", "Отдых");
                         break;
                     case 2:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("name", "Name");
-                        dgw.Columns.Add("surname", "Surname");
-                        dgw.Columns.Add("phone", "phone");
-                        dgw.Columns.Add("age", "Age");
+                        dgw.Columns.Add("Имя", "Имя");
+                        dgw.Columns.Add("Фамилия", "Фамилия");
+                        dgw.Columns.Add("Телефон", "Телефон");
+                        dgw.Columns.Add("Возраст", "Возраст");
                         break;
                     case 3:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("diagnoz", "diagnoz");
+                        dgw.Columns.Add("Диагноз", "Диагноз");
                         break;
                     case 4:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("name", "name");
-                        dgw.Columns.Add("surname", "surname");
-                        dgw.Columns.Add("name", "name");
-                        dgw.Columns.Add("cabinet", "cabinet");
-                        dgw.Columns.Add("account", "account");
+                        dgw.Columns.Add("Имя", "Имя");
+                        dgw.Columns.Add("Фамилия", "Фамилия");
+                        dgw.Columns.Add("Должность", "Должность");
+                        dgw.Columns.Add("Кабинет", "Кабинет");
+                        dgw.Columns.Add("Аккаунт", "Аккаунт");
                         break;
                     case 5:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("login", "Логин");
-                        dgw.Columns.Add("password", "Пароль");
-                        dgw.Columns.Add("rol", "Роль");
+                        dgw.Columns.Add("Логин", "Логин");
+                        dgw.Columns.Add("Пароль", "Пароль");
+                        dgw.Columns.Add("Роль", "Роль");
                         break;
                     case 6:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("name", "name");
+                        dgw.Columns.Add("Должность", "Должность");
                         break;
                     case 7:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("rols", "rols");
+                        dgw.Columns.Add("Роль", "Роль");
                         break;
                     case 8:
                         dgw.Columns.Add("id", "id");
-                        dgw.Columns.Add("rang", "rang");
+                        dgw.Columns.Add("Должность", "Должность");
                         break;
 
 
@@ -172,7 +172,7 @@ namespace Med.Forms
                     break;
                 case 3:
                     queryString = $"select d.id, d.diagnoz " +
-                        $"from Diagnoz d " +
+                        $"from diagnoz d " +
                         $"where d.id like '%{first}%' and d.diagnoz like '%{second}%'";
                     break;
                 case 4:

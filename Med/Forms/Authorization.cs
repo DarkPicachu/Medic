@@ -30,28 +30,33 @@ namespace Med.Forms
             string querystring = $"select ac.rol, w.id, ac.id from accounts ac, workers w where ac.login = '{login}' and ac.password='{password}' and ac.id = w.account";
 
             SqlCommand command = new SqlCommand(querystring, dataBase.getConnection());
-
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            role = Convert.ToInt32(table.Rows[0][0]);
-            idaccount = Convert.ToInt32(table.Rows[0][1]);
-            GetSet.Idworker = idaccount;
-            JornalForm medKart = new JornalForm();
-            GetSet.Idacc = Convert.ToInt32(table.Rows[0][2]);
-            MainWindow mainWindow = new MainWindow();
-            if (role == 1)
+            try
             {
-                mainWindow.Show();
-                this.Hide();
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+                role = Convert.ToInt32(table.Rows[0][0]);
+                idaccount = Convert.ToInt32(table.Rows[0][1]);
+                GetSet.Idworker = idaccount;
+                JornalForm medKart = new JornalForm();
+                GetSet.Idacc = Convert.ToInt32(table.Rows[0][2]);
+                MainWindow mainWindow = new MainWindow();
+                if (role == 1)
+                {
+                    mainWindow.Show();
+                    this.Hide();
+                }
+                else if (role == 2)
+                {
+                    mainWindow.Show();
+                }
+                else if (role == 3)
+                {
+                    MessageBox.Show("Нет прав");
+                }
             }
-            else if (role == 2)
+            catch
             {
-                mainWindow.Show();
-            }
-            else if (role == 3)
-            {
-                medKart.Show();
-                this.Hide();
+                label3.Visible = true;
             }
         }
     }

@@ -38,11 +38,20 @@ namespace Med
             {
                 comboBox2.Items.Add(table2.Rows[i][1] + " " + table2.Rows[i][2]);
             }*/
-           if(GetSet.Update)
+           
+
+
+            string[] items = { };
+            reader reader = new reader();
+            reader.read("diagnoz", "diagnoz", "diagnoz", comboBox1.Text, out items);
+            comboBox1.Items.AddRange(items);
+            reader.read("name+' '+ surname", "client", "(name + surname)", comboBox2.Text, out items);
+            comboBox2.Items.AddRange(items);
+            if (GetSet.Update)
             {
                 dataBase.openConnection();
-                string query = $"select j.id , (c.name+ ' ' + c.surname), d.diagnoz , j.rest, j.healing "+
-                    $"from client c, jornal j , diagnoz d "+
+                string query = $"select j.id , (c.name+ ' ' + c.surname), d.diagnoz , j.rest, j.healing " +
+                    $"from client c, jornal j , diagnoz d " +
                     $"where c.id = j.client  and d.id = j.diagnoz and j.id = {GetSet.Id}";
                 SqlCommand command = new SqlCommand(query, dataBase.getConnection());
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
@@ -53,17 +62,9 @@ namespace Med
                 textBox5.Text = table.Rows[0][3].ToString();
                 textBox4.Text = table.Rows[0][4].ToString();
                 return;
-
             }
-
-
-            string[] items = { };
-            reader reader = new reader();
-            reader.read("diagnoz", "diagnoz", "diagnoz", comboBox1.Text, out items);
-            comboBox1.Items.AddRange(items);
-            reader.read("name+' '+ surname", "client", "(name + surname)", comboBox2.Text, out items);
-            comboBox2.Items.AddRange(items);
-
+            label7.Visible = false;
+            textBox6.Visible = false;
 
         }        
 
@@ -129,7 +130,10 @@ namespace Med
             string diagnoz = comboBox1.Text;
             string heal = textBox4.Text;
             string rest = textBox5.Text;
-            string querystring = $"update jornal (client, worker, time, diagnoz , healing,rest)values((select  id from client where (name +' ' +surname) = '{name}'), '{work}','{dateTime}', (select  id from diagnoz where (diagnoz) = '{diagnoz}'),'{heal}','{rest}')";
+            string querystring = $"insert into jornal (client, worker, time, diagnoz , healing,rest)" +
+                $"values((select  id from client where (name +' ' +surname) = '{name}'), " +
+                $"'{work}','{dateTime}', " +
+                $"(select  id from diagnoz where (diagnoz) = '{diagnoz}'),'{heal}','{rest}')";
             try
             {
                 SqlCommand cmd = new SqlCommand(querystring, dataBase.getConnection());
@@ -137,8 +141,9 @@ namespace Med
                 cmd.ExecuteNonQuery();
                 dataBase.closeConnection();
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Введено неверное значение", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }

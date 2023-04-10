@@ -11,7 +11,7 @@ namespace Med
         public static int Id { get ;set;}
         public static bool Update { get ;set;}
         public  static int Idworker { get ;set;}
-        public static int ide { get; set; }
+        public static int Idacc { get; set; }
 
     }
 }
